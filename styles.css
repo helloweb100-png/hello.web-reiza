@@ -435,6 +435,24 @@ html.lenis, html.lenis body { height: auto; }
 .dash-rows b { margin-left: auto; font-family: var(--f-mono); font-weight: 500; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: #3ddc84; }
 .d-ok { width: 8px; height: 8px; border-radius: 50%; background: #3ddc84; box-shadow: 0 0 8px #3ddc84; }
 
+/* Foto en la tarjeta de guardias */
+.b1-photo { margin-top: 26px; aspect-ratio: 16 / 10; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--line-d); background: var(--navy-950); }
+.b1-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
+
+/* Servicios especializados (K9 y escoltas VIP) */
+.spec { margin-top: clamp(40px, 6vw, 64px); }
+.spec-h { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.3rem, 3.4vw, 1.8rem); line-height: 1.2; letter-spacing: -.025em; color: var(--t-light); }
+.spec-grid { display: grid; gap: 14px; margin-top: 24px; }
+.spec-card { display: flex; flex-direction: column; padding: 0; }
+.spec-img { position: relative; display: block; width: 100%; aspect-ratio: 3 / 2; overflow: hidden; cursor: zoom-in; background: var(--navy-950); }
+.spec-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+.spec-card:hover .spec-img img { transform: scale(1.04); }
+.spec-body { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 24px 28px 28px; }
+.spec-card h4 { font-family: var(--f-display); font-weight: 700; font-size: 1.25rem; letter-spacing: -.02em; line-height: 1.25; }
+.spec-card .chips li { color: var(--blue-700); border-color: rgba(27, 95, 214, .28); }
+.spec-body .chips { margin-bottom: 24px; }
+.spec-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
+
 .cta-strip { display: grid; gap: 20px; align-items: center; margin-top: 14px; padding: 26px 28px; border-radius: var(--r-lg); background: var(--navy-900); color: #fff; }
 .cta-strip p { font-family: var(--f-display); font-weight: 600; font-size: 1.1rem; line-height: 1.4; letter-spacing: -.015em; }
 .cta-strip p span { display: block; margin-top: 4px; font-family: var(--f-body); font-weight: 400; font-size: .95rem; color: var(--m-dark); }
@@ -446,6 +464,8 @@ html.lenis, html.lenis body { height: auto; }
   .b6-dash { margin-top: 0; }
   .b2-tag { position: absolute !important; right: 26px; bottom: 26px; display: block; width: 92px; padding: 0; transform: rotate(-6deg); border-radius: 10px; overflow: hidden; border: 1px solid var(--line-l); background: #fff; transition: transform .6s var(--ease); }
   .b2:hover .b2-tag { transform: rotate(0) scale(1.08); }
+  .b1-photo { aspect-ratio: 21 / 9; }
+  .spec-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .b2-tag .qr { width: 100%; border-radius: 0; }
   .b2-laser { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, transparent, #ff5a4d, transparent); box-shadow: 0 0 10px 2px rgba(255, 90, 77, .7); animation: laserTag 2.4s ease-in-out infinite; }
   .cta-strip { grid-template-columns: 1fr auto; padding: 28px 36px; gap: 32px; }
@@ -458,6 +478,10 @@ html.lenis, html.lenis body { height: auto; }
   .b6 { grid-column: span 12; padding: 40px; }
   .b1 h3 { font-size: 1.6rem; }
   .b1 p { max-width: 46ch; font-size: 1rem; }
+  /* la foto va a la derecha, sin alargar la tarjeta */
+  .b1-photo { position: absolute !important; z-index: 0 !important; top: 0; right: 0; bottom: 0; width: 44%; margin: 0; aspect-ratio: auto; border: 0; border-radius: 0; background: none; -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, .22) 42%, #000 86%); mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, .22) 42%, #000 86%); }
+  .b1-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7, 18, 48, .9), transparent 40%); }
+  .b1-photo img { object-position: 24% 30%; }
 }
 
 /* ─── 13. RONDINES QR (escena fija con scroll) ───────────────── */
